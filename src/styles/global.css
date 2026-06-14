@@ -109,7 +109,7 @@ li {
 }
 
 img,
-ion-icon,
+svg,
 a,
 button,
 time,
@@ -199,8 +199,9 @@ article {
     z-index: -1;
 }
 
-.icon-box ion-icon {
-    --ionicon-stroke-width: 35px;
+.icon-box svg {
+    width: 1em;
+    height: 1em;
 }
 
 article {
@@ -1094,8 +1095,9 @@ main {
     opacity: 1;
 }
 
-.project-item-icon-box ion-icon {
-    --ionicon-stroke-width: 50px;
+.project-item-icon-box svg {
+    width: 1em;
+    height: 1em;
 }
 
 .project-img img {
@@ -1330,8 +1332,10 @@ textarea.form-input::-webkit-resizer {
     transition: var(--transition-1);
 }
 
-.form-btn ion-icon {
+.form-btn svg {
     font-size: 16px;
+    width: 1em;
+    height: 1em;
 }
 
 .form-btn:hover {
@@ -1507,7 +1511,7 @@ textarea.form-input::-webkit-resizer {
         font-size: var(--fs-8);
     }
 
-    .info_more-btn ion-icon {
+    .info_more-btn svg {
         display: none;
     }
 
@@ -1733,7 +1737,7 @@ textarea.form-input::-webkit-resizer {
         padding: 16px 20px;
     }
 
-    .form-btn ion-icon {
+    .form-btn svg {
         font-size: 18px;
     }
 
@@ -2139,4 +2143,175 @@ textarea.form-input::-webkit-resizer {
         max-width: 700px;
     }
 
+}
+
+
+
+
+
+/*-----------------------------------*\
+    #ICONS (astro-icon inline SVG)
+  \*-----------------------------------*/
+
+svg {
+    fill: currentColor;
+}
+
+.social-link svg {
+    width: 20px;
+    height: 20px;
+}
+
+.select-icon svg,
+.info_more-btn svg {
+    width: 1em;
+    height: 1em;
+}
+
+.download-cv {
+    width: max-content;
+    margin: 0 0 30px;
+    text-decoration: none;
+}
+
+.download-cv svg {
+    font-size: 16px;
+    width: 1em;
+    height: 1em;
+}
+
+/* avatar keeps aspect ratio regardless of the optimizer's width/height attrs */
+.avatar-box img {
+    height: auto;
+}
+
+/* accent-tint the service (what-i'm-doing) icons */
+.service-icon-box svg {
+    color: var(--orange-yellow-crayola);
+}
+
+/* experience bullet lists */
+.bullet-list li {
+    position: relative;
+    padding-left: 16px;
+}
+
+.bullet-list li:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.bullet-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--vegas-gold);
+}
+
+
+
+
+
+/*-----------------------------------*\
+    #TECHNICAL SKILLS
+  \*-----------------------------------*/
+
+.skills {
+    margin-bottom: 15px;
+}
+
+.skills-title {
+    margin-bottom: 20px;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 24px;
+    padding: 12px 5px;
+}
+
+.skill-chip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    width: 64px;
+    transition: var(--transition-1);
+}
+
+.skill-chip:hover {
+    transform: translateY(-3px);
+}
+
+.skill-chip svg {
+    width: 42px;
+    height: 42px;
+}
+
+.skill-chip span {
+    color: var(--light-gray-70);
+    font-size: var(--fs-8);
+    font-weight: var(--fw-300);
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* certifications, awards, languages */
+.info-list {
+    margin-left: 45px;
+    font-size: var(--fs-6);
+}
+
+.info-list .info-item {
+    position: relative;
+    color: var(--light-gray);
+    font-weight: var(--fw-300);
+    line-height: 1.6;
+}
+
+.info-list .info-item:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+.info-list .info-item strong {
+    color: var(--white-2);
+    font-weight: var(--fw-500);
+}
+
+.info-list .info-item .info-meta {
+    color: var(--vegas-gold);
+    font-size: var(--fs-7);
+}
+
+.info-list .info-item::after {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: -33px;
+    height: 6px;
+    width: 6px;
+    background: var(--text-gradient-yellow);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px var(--jet);
+}
+
+.languages-inline {
+    margin-left: 45px;
+    color: var(--light-gray);
+    font-size: var(--fs-6);
+    font-weight: var(--fw-300);
+    line-height: 1.6;
+}
+
+@media (min-width: 580px) {
+    .info-list,
+    .languages-inline {
+        margin-left: 65px;
+    }
+
+    .info-list .info-item::after {
+        height: 8px;
+        width: 8px;
+        left: -43px;
+    }
 }

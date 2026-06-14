@@ -1,6 +1,6 @@
 # Portfolio → Astro Migration Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> Task-by-task plan. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Migrate the static "vCard" portfolio to Astro — same visual identity, CV-accurate content, bugs fixed, optimized, deployed to GitHub Pages.
 

@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Sidebar from '../components/Sidebar.astro';
+import Navbar from '../components/Navbar.astro';
+import About from '../components/About.astro';
+import Resume from '../components/Resume.astro';
+import Portfolio from '../components/Portfolio.astro';
+import Contact from '../components/Contact.astro';
+---
+
+<Layout>
+  <main>
+    <Sidebar />
+
+    <div class="main-content">
+      <Navbar />
+      <About />
+      <Resume />
+      <Portfolio />
+      <Contact />
+    </div>
+  </main>
+
+  <script>
+    import '../scripts/main.ts';
+  </script>
+</Layout>

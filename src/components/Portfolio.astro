@@ -1,0 +1,69 @@
+---
+import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
+import { projects } from '../data/projects';
+
+const filters = ['All', 'Mobile Development', 'Web development'];
+---
+
+<article class="portfolio" data-page="portfolio">
+  <header>
+    <h2 class="h2 article-title">Portfolio</h2>
+  </header>
+
+  <section class="projects">
+    <ul class="filter-list">
+      {
+        filters.map((filter, i) => (
+          <li class="filter-item">
+            <button class:list={[{ active: i === 0 }]} data-filter-btn>
+              {filter}
+            </button>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="filter-select-box">
+      <button class="filter-select" data-select aria-label="Filter projects by category">
+        <div class="select-value" data-select-value>Select category</div>
+        <div class="select-icon"><Icon name="ion:chevron-down" /></div>
+      </button>
+
+      <ul class="select-list">
+        {
+          filters.map((filter) => (
+            <li class="select-item">
+              <button data-select-item>{filter}</button>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <ul class="project-list">
+      {
+        projects.map((project) => (
+          <li class="project-item active" data-filter-item data-category={project.category}>
+            <a href={project.url} target="_blank" rel="noopener noreferrer">
+              <figure class="project-img">
+                <div class="project-item-icon-box">
+                  <Icon name="ion:eye-outline" />
+                </div>
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  loading="lazy"
+                  widths={[300, 600]}
+                  sizes="(min-width: 1024px) 300px, (min-width: 768px) 50vw, 100vw"
+                />
+              </figure>
+              <h3 class="project-title">{project.title}</h3>
+              <p class="project-category">{project.tech}</p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</article>

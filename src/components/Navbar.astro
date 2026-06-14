@@ -1,0 +1,22 @@
+---
+const tabs = [
+  { key: 'about', label: 'About' },
+  { key: 'resume', label: 'Resume' },
+  { key: 'portfolio', label: 'Portfolio' },
+  { key: 'contact', label: 'Contact' },
+];
+---
+
+<nav class="navbar">
+  <ul class="navbar-list">
+    {
+      tabs.map((tab, i) => (
+        <li class="navbar-item">
+          <button class:list={['navbar-link', { active: i === 0 }]} data-nav-link={tab.key}>
+            {tab.label}
+          </button>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
