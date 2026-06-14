@@ -1,0 +1,81 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const mapSrc =
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d184552.30943582457!2d-79.37805805!3d43.7182412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cb90d7c63ba5%3A0x323555502ab4c477!2sToronto%2C%20Ontario!5e0!3m2!1ses!2sca!4v1729624014896!5m2!1ses!2sca';
+---
+
+<article class="contact" data-page="contact">
+  <header>
+    <h2 class="h2 article-title">Contact</h2>
+  </header>
+
+  <section class="mapbox" data-mapbox>
+    <figure>
+      <iframe
+        src={mapSrc}
+        width="400"
+        height="300"
+        loading="lazy"
+        title="Map of Toronto, Ontario, Canada"
+        style="border:0;"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </figure>
+  </section>
+
+  <section class="contact-form">
+    <h3 class="h3 form-title">Contact Form</h3>
+
+    <form
+      action="https://api.web3forms.com/submit"
+      method="POST"
+      class="form"
+      data-form
+      id="contact-form"
+    >
+      <input type="hidden" name="access_key" value="38d88754-b666-4aae-87d4-0f80325eb388" />
+      <input type="hidden" name="subject" value="New message from your portfolio" />
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+
+      <div class="input-wrapper">
+        <input
+          type="text"
+          name="firstname"
+          class="form-input"
+          placeholder="First name"
+          required
+          data-form-input
+        />
+        <input
+          type="text"
+          name="lastname"
+          class="form-input"
+          placeholder="Last name"
+          required
+          data-form-input
+        />
+        <input
+          type="email"
+          name="email"
+          class="form-input"
+          placeholder="Email address"
+          required
+          data-form-input
+        />
+      </div>
+
+      <textarea
+        name="message"
+        class="form-input"
+        placeholder="Your Message"
+        required
+        data-form-input></textarea>
+
+      <button class="form-btn" type="submit" disabled data-form-btn>
+        <Icon name="ion:paper-plane-outline" />
+        <span>Send Message</span>
+      </button>
+    </form>
+  </section>
+</article>

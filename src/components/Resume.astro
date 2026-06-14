@@ -1,0 +1,107 @@
+---
+import { Icon } from 'astro-icon/components';
+import { profile } from '../data/profile';
+import {
+  education,
+  experience,
+  certifications,
+  awards,
+  languages,
+} from '../data/resume';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const cvHref = `${base}/${profile.cv}`;
+---
+
+<article class="resume" data-page="resume">
+  <header>
+    <h2 class="h2 article-title">Resume</h2>
+  </header>
+
+  <a class="form-btn download-cv" href={cvHref} download>
+    <Icon name="ion:download-outline" />
+    <span>Download CV</span>
+  </a>
+
+  <section class="timeline">
+    <div class="title-wrapper">
+      <div class="icon-box"><Icon name="ion:briefcase-outline" /></div>
+      <h3 class="h3">Experience</h3>
+    </div>
+
+    <ol class="timeline-list">
+      {
+        experience.map((job) => (
+          <li class="timeline-item">
+            <h4 class="h4 timeline-item-title">{job.title}</h4>
+            <span>{job.subtitle} &middot; {job.period}</span>
+            {job.bullets && (
+              <ul class="timeline-text bullet-list">
+                {job.bullets.map((bullet) => (
+                  <li>{bullet}</li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="timeline">
+    <div class="title-wrapper">
+      <div class="icon-box"><Icon name="ion:book-outline" /></div>
+      <h3 class="h3">Education</h3>
+    </div>
+
+    <ol class="timeline-list">
+      {
+        education.map((item) => (
+          <li class="timeline-item">
+            <h4 class="h4 timeline-item-title">{item.title}</h4>
+            <span>{item.period}</span>
+            <p class="timeline-text">{item.subtitle}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="timeline">
+    <div class="title-wrapper">
+      <div class="icon-box"><Icon name="ion:ribbon-outline" /></div>
+      <h3 class="h3">Certifications</h3>
+    </div>
+
+    <ul class="info-list">
+      {
+        certifications.map((cert) => (
+          <li class="info-item">
+            <strong>{cert.name}</strong>
+            <span class="info-meta"> — {cert.issuer}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="timeline">
+    <div class="title-wrapper">
+      <div class="icon-box"><Icon name="ion:trophy-outline" /></div>
+      <h3 class="h3">Awards &amp; Honors</h3>
+    </div>
+
+    <ul class="info-list">
+      {awards.map((award) => <li class="info-item">{award}</li>)}
+    </ul>
+  </section>
+
+  <section class="timeline">
+    <div class="title-wrapper">
+      <div class="icon-box"><Icon name="ion:language-outline" /></div>
+      <h3 class="h3">Languages</h3>
+    </div>
+
+    <p class="languages-inline">{languages.join('  ·  ')}</p>
+  </section>
+</article>
