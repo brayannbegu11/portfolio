@@ -2321,47 +2321,6 @@ svg {
 
 
 /*-----------------------------------*\
-    #AVAILABILITY BADGE
-  \*-----------------------------------*/
-
-.badge-available {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    margin: 2px 0 20px;
-    padding: 5px 12px;
-    border-radius: 20px;
-    background: hsla(145, 63%, 42%, 0.12);
-    border: 1px solid hsla(145, 63%, 49%, 0.4);
-    color: hsl(145, 60%, 70%);
-    font-size: var(--fs-8);
-    font-weight: var(--fw-400);
-    width: max-content;
-}
-
-.badge-available .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: hsl(145, 63%, 49%);
-    box-shadow: 0 0 0 3px hsla(145, 63%, 49%, 0.25);
-    animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.45; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .badge-available .dot { animation: none; }
-}
-
-
-
-
-
-/*-----------------------------------*\
     #PORTFOLIO CARDS (featured + more)
   \*-----------------------------------*/
 

@@ -1,7 +1,6 @@
 export const profile = {
   name: 'Brayann Benavides',
   title: 'Software Developer',
-  availability: 'Open to new opportunities',
   summary:
     'Software Developer specializing in backend systems (.NET, C#, NestJS, REST APIs) and cross-platform mobile apps (React Native), with a data-driven background in SQL, Pandas and Power BI. I build full-stack solutions end to end, applying clean architecture and strong code-quality and version-control practices.',
   email: 'brayannbegu11@gmail.com',
