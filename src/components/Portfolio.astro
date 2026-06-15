@@ -1,9 +1,9 @@
 ---
 import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
-import { projects } from '../data/projects';
+import { featuredProjects, moreProjects } from '../data/projects';
 
-const filters = ['All', 'Mobile Development', 'Web development'];
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <article class="portfolio" data-page="portfolio">
@@ -12,43 +12,16 @@ const filters = ['All', 'Mobile Development', 'Web development'];
   </header>
 
   <section class="projects">
-    <ul class="filter-list">
-      {
-        filters.map((filter, i) => (
-          <li class="filter-item">
-            <button class:list={[{ active: i === 0 }]} data-filter-btn>
-              {filter}
-            </button>
-          </li>
-        ))
-      }
-    </ul>
-
-    <div class="filter-select-box">
-      <button class="filter-select" data-select aria-label="Filter projects by category">
-        <div class="select-value" data-select-value>Select category</div>
-        <div class="select-icon"><Icon name="ion:chevron-down" /></div>
-      </button>
-
-      <ul class="select-list">
-        {
-          filters.map((filter) => (
-            <li class="select-item">
-              <button data-select-item>{filter}</button>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
+    <p class="section-label">Featured case studies</p>
 
     <ul class="project-list">
       {
-        projects.map((project) => (
-          <li class="project-item active" data-filter-item data-category={project.category}>
-            <a href={project.url} target="_blank" rel="noopener noreferrer">
+        featuredProjects.map((project) => (
+          <li class="project-item active">
+            <a href={`${base}/projects/${project.slug}`}>
               <figure class="project-img">
                 <div class="project-item-icon-box">
-                  <Icon name="ion:eye-outline" />
+                  <Icon name="ion:arrow-forward-outline" />
                 </div>
                 <Image
                   src={project.image}
@@ -59,11 +32,56 @@ const filters = ['All', 'Mobile Development', 'Web development'];
                 />
               </figure>
               <h3 class="project-title">{project.title}</h3>
-              <p class="project-category">{project.tech}</p>
+              <p class="project-tagline">{project.tagline}</p>
+              <ul class="card-tech">
+                {project.tech.slice(0, 4).map((t) => <li>{t}</li>)}
+              </ul>
+              <span class="project-cta">
+                Read case study <Icon name="ion:arrow-forward-outline" />
+              </span>
             </a>
           </li>
         ))
       }
     </ul>
+
+    <div class="more-projects">
+      <p class="section-label">More projects</p>
+
+      <ul class="more-grid">
+        {
+          moreProjects.map((project) => (
+            <li class="more-item">
+              <div class="more-info">
+                <h4>{project.title}</h4>
+                <p>{project.tagline}</p>
+              </div>
+              <div class="more-links">
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${project.title} live demo`}
+                  >
+                    <Icon name="ion:open-outline" />
+                  </a>
+                )}
+                {project.repoUrl && (
+                  <a
+                    href={project.repoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${project.title} source code`}
+                  >
+                    <Icon name="ion:logo-github" />
+                  </a>
+                )}
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   </section>
 </article>
