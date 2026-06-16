@@ -1,5 +1,5 @@
 // Portfolio interactivity — vanilla TS, no dependencies.
-// Handles: mobile sidebar toggle, page tabs, portfolio filter, contact-form validation.
+// Handles: mobile sidebar toggle, page tabs (with hash deep-linking), contact-form validation.
 
 const $ = <T extends Element>(sel: string) => document.querySelector<T>(sel);
 const $$ = <T extends Element>(sel: string) =>
@@ -11,58 +11,29 @@ $('[data-sidebar-btn]')?.addEventListener('click', () =>
   sidebar?.classList.toggle('active'),
 );
 
-/* ---- page navigation (tabs) ---- */
+/* ---- page navigation (tabs + hash deep-linking) ---- */
 const navLinks = $$<HTMLButtonElement>('[data-nav-link]');
 const pages = $$<HTMLElement>('[data-page]');
 
+const activateTab = (target: string) => {
+  pages.forEach((page) => page.classList.toggle('active', page.dataset.page === target));
+  navLinks.forEach((link) => link.classList.toggle('active', link.dataset.navLink === target));
+};
+
 navLinks.forEach((link) => {
   link.addEventListener('click', () => {
-    const target = link.dataset.navLink;
-    pages.forEach((page) =>
-      page.classList.toggle('active', page.dataset.page === target),
-    );
-    navLinks.forEach((l) => l.classList.toggle('active', l === link));
+    const target = link.dataset.navLink!;
+    activateTab(target);
+    history.replaceState(null, '', `#${target}`);
     window.scrollTo(0, 0);
   });
 });
 
-/* ---- portfolio filter ---- */
-const filterItems = $$<HTMLElement>('[data-filter-item]');
-const selectValue = $<HTMLElement>('[data-select-value]');
-
-const applyFilter = (value: string) => {
-  filterItems.forEach((item) =>
-    item.classList.toggle(
-      'active',
-      value === 'all' || value === item.dataset.category,
-    ),
-  );
-};
-
-// large-screen filter buttons
-const filterButtons = $$<HTMLButtonElement>('[data-filter-btn]');
-filterButtons.forEach((btn) => {
-  btn.addEventListener('click', () => {
-    const value = (btn.textContent ?? '').toLowerCase().trim();
-    if (selectValue) selectValue.textContent = btn.textContent;
-    filterButtons.forEach((b) => b.classList.remove('active'));
-    btn.classList.add('active');
-    applyFilter(value);
-  });
-});
-
-// small-screen custom select
-const select = $('[data-select]');
-select?.addEventListener('click', () => select.classList.toggle('active'));
-
-$$<HTMLButtonElement>('[data-select-item]').forEach((item) => {
-  item.addEventListener('click', () => {
-    const value = (item.textContent ?? '').toLowerCase().trim();
-    if (selectValue) selectValue.textContent = item.textContent;
-    select?.classList.remove('active');
-    applyFilter(value);
-  });
-});
+// Honor a deep link like /#portfolio (e.g. "Back to portfolio" from a case study).
+const initial = location.hash.replace('#', '');
+if (initial && pages.some((p) => p.dataset.page === initial)) {
+  activateTab(initial);
+}
 
 /* ---- contact form validation ---- */
 const form = $<HTMLFormElement>('[data-form]');

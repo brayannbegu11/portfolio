@@ -19,6 +19,38 @@ const withBase = (p: string) => `${base}/${p.replace(/^\//, '')}`;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const ogImage = new URL(withBase('social-card.png'), Astro.site);
+
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: profile.name,
+  jobTitle: profile.title,
+  url: new URL(`${base}/`, Astro.site).href,
+  image: ogImage.href,
+  email: `mailto:${profile.email}`,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Toronto',
+    addressRegion: 'ON',
+    addressCountry: 'CA',
+  },
+  knowsAbout: [
+    'Backend development',
+    '.NET',
+    'C#',
+    'NestJS',
+    'REST APIs',
+    'React Native',
+    'TypeScript',
+    'SQL',
+    'Data analysis',
+  ],
+  alumniOf: [
+    { '@type': 'CollegeOrUniversity', name: 'George Brown College' },
+    { '@type': 'CollegeOrUniversity', name: 'Universidad de la Sabana' },
+  ],
+  sameAs: profile.socials.map((s) => s.url),
+};
 ---
 
 <!doctype html>
@@ -47,6 +79,9 @@ const ogImage = new URL(withBase('social-card.png'), Astro.site);
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+
+    <!-- Structured data -->
+    <script type="application/ld+json" set:html={JSON.stringify(personJsonLd)} is:inline />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
