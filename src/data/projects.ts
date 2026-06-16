@@ -56,7 +56,7 @@ export const projects: Project[] = [
       problem:
         'BookBond was my capstone at George Brown, built as a work-integrated project with weekly demos to industry mentors. The premise was simple: let people rent and lend books to each other instead of leaving them on a shelf.',
       role:
-        'I worked across the whole stack — the React Native app, the Firebase backend, and a GitHub Actions pipeline that kept builds passing between demos. I also presented our progress at the weekly reviews.',
+        'I worked across the whole stack: the React Native app, the Firebase backend, and a GitHub Actions pipeline that kept builds passing between demos. I also presented our progress at the weekly reviews.',
       decisions: [
         'React Native, so a single codebase covered both iOS and Android.',
         'Firebase for authentication and real-time data, which saved us from building and hosting our own backend.',
@@ -79,7 +79,7 @@ export const projects: Project[] = [
       problem:
         'Two sides of one problem: someone has a car sitting unused, and someone nearby needs one for a day. Both have to trust each other, and location is half the question.',
       role:
-        'I built it as two connected React Native apps — one for owners, one for renters — over a shared Firebase backend for accounts, listings and bookings. Renters search by location and watch availability change in real time.',
+        'I built it as two connected React Native apps (one for owners, one for renters) over a shared Firebase backend for accounts, listings and bookings. Renters search by location and watch availability change in real time.',
       decisions: [
         'Two separate apps instead of one with a role switch, so each side only deals with what it needs.',
         'Maps up front, since the first thing a renter asks is what’s nearby.',

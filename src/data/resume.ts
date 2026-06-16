@@ -56,8 +56,8 @@ export const certifications: Certification[] = [
 ];
 
 export const awards: string[] = [
-  "Dean's Honor List — awarded for a high grade point average (2024).",
-  'Graduated with honors — George Brown College (2024).',
+  "Dean's Honour List, awarded for a high grade point average (2024).",
+  'Graduated with honours from George Brown College (2024).',
 ];
 
 export const languages: string[] = ['English', 'Spanish'];

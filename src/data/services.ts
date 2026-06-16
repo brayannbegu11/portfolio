@@ -8,7 +8,7 @@ export const services: Service[] = [
   {
     icon: 'ion:server-outline',
     title: 'Backend Development',
-    text: 'REST APIs and backend services with .NET, C# and NestJS — keeping the business logic clear and the code easy to change later.',
+    text: 'REST APIs and backend services with .NET, C# and NestJS, keeping the business logic clear and the code easy to change later.',
   },
   {
     icon: 'ion:phone-portrait-outline',
