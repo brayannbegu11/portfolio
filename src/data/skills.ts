@@ -13,6 +13,7 @@ export const skills: Skill[] = [
   { name: 'Node.js', icon: 'devicon:nodejs' },
   { name: 'Python', icon: 'devicon:python' },
   { name: 'PostgreSQL', icon: 'devicon:postgresql' },
+  { name: 'Firebase', icon: 'devicon:firebase' },
   { name: 'Kotlin', icon: 'devicon:kotlin' },
   { name: 'Swift', icon: 'devicon:swift' },
   { name: 'Docker', icon: 'devicon:docker' },

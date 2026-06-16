@@ -24,10 +24,11 @@ export const experience: TimelineEntry[] = [
     subtitle: 'Toronto, ON',
     period: 'Jan. 2025 — Present',
     bullets: [
-      'Web development with .NET, C#, React Native and SQL.',
-      'Resolve internal and external customer inquiries on technical issues.',
-      'Monitor and manage technical issues across products.',
-      'Track work through internal ticketing and development-tracking tools.',
+      'Own features end-to-end for a production field-service platform (property-restoration / insurance-claims), across a React Native mobile app and .NET/C# sync APIs.',
+      'Designed and shipped an in-app invoicing feature that generates invoices in multiple modes (full, deductible, remaining balance) mirroring the web billing flow, and sends customers payment links over SMS via an OAuth-secured messaging API.',
+      'Strengthened the offline-first sync engine between mobile and backend by diagnosing and fixing silent server-rejection handling, improving the reliability of field data capture.',
+      'Fixed location-tracking and record-identity defects in the inventory (Contents) module across the mobile client and the sync API, eliminating silent failures in item transfers and assignments.',
+      'Implemented configurable, settings-driven inspection screens so the mobile app matches per-deployment business rules.',
     ],
   },
   {
