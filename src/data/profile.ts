@@ -2,7 +2,7 @@ export const profile = {
   name: 'Brayann Benavides',
   title: 'Software Developer',
   summary:
-    'Software Developer specializing in backend systems (.NET, C#, NestJS, REST APIs) and cross-platform mobile apps (React Native), with a data-driven background in SQL, Pandas and Power BI. I build full-stack solutions end to end, applying clean architecture and strong code-quality and version-control practices.',
+    'I’m a software developer with about two years of experience across backend and mobile. Right now I work on a production field-service platform — building React Native screens, the .NET/C# sync APIs behind them, and the offline syncing that keeps everything consistent when there’s no signal. Recently that included an in-app invoicing flow that sends customers their payment links over SMS. I’m strongest in C#/.NET and React Native, and I like owning a feature the whole way, from the API to the screen.',
   email: 'brayannbegu11@gmail.com',
   location: 'Toronto, Ontario, Canada',
   // File lives in /public and is served at <base>/Brayann-Benavides-CV.pdf

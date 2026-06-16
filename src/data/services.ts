@@ -8,21 +8,21 @@ export const services: Service[] = [
   {
     icon: 'ion:server-outline',
     title: 'Backend Development',
-    text: 'Designing and building scalable services and REST APIs with .NET, C# and NestJS, applying clean architecture and solid business logic.',
+    text: 'REST APIs and backend services with .NET, C# and NestJS — keeping the business logic clear and the code easy to change later.',
   },
   {
     icon: 'ion:phone-portrait-outline',
     title: 'Mobile Development',
-    text: 'Cross-platform mobile apps with React Native — focused on performance, usability and a seamless experience across devices.',
+    text: 'Cross-platform apps in React Native that hold up on both iOS and Android, including the harder parts like offline support and syncing.',
   },
   {
     icon: 'ion:bar-chart-outline',
     title: 'Data & Analytics',
-    text: 'Data-driven development with SQL, Pandas and Power BI: ETL processes, dashboards and insights that support decision-making.',
+    text: 'The data side too, from my time as a data scientist: SQL, Pandas and Power BI for ETL, dashboards and reporting.',
   },
   {
     icon: 'ion:git-branch-outline',
     title: 'Clean Code & Delivery',
-    text: 'Version control and CI/CD with Git, GitHub Actions and Docker, working in Agile (Scrum) to ship maintainable software.',
+    text: 'Git, GitHub Actions and Docker for CI/CD, working in Scrum, with a bias toward maintainable code over clever code.',
   },
 ];

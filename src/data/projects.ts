@@ -54,21 +54,16 @@ export const projects: Project[] = [
     featured: true,
     caseStudy: {
       problem:
-        'Readers needed an easy way to rent and borrow books from one another. BookBond was developed as a work-integrated project with weekly progress demos to industry mentors, aiming for a production-ready release.',
+        'BookBond was my capstone at George Brown, built as a work-integrated project with weekly demos to industry mentors. The premise was simple: let people rent and lend books to each other instead of leaving them on a shelf.',
       role:
-        'Full-stack developer — built the React Native cross-platform app and the Firebase backend, set up continuous integration with GitHub Actions, and presented progress across 12 weekly review meetings.',
+        'I worked across the whole stack — the React Native app, the Firebase backend, and a GitHub Actions pipeline that kept builds passing between demos. I also presented our progress at the weekly reviews.',
       decisions: [
-        'Used React Native for a single codebase across iOS and Android.',
-        'Chose Firebase for authentication and real-time data to move fast without standing up a custom backend.',
-        'Automated builds and checks with GitHub Actions to keep the app release-ready.',
+        'React Native, so a single codebase covered both iOS and Android.',
+        'Firebase for authentication and real-time data, which saved us from building and hosting our own backend.',
+        'GitHub Actions to run builds and checks automatically, so the app stayed demo-ready each week.',
       ],
       outcome:
-        'A working platform where users browse, rent and lend books, backed by secure authentication and real-time data.',
-      metrics: [
-        'Facilitated 1,000+ book rentals & borrowings per month',
-        'Firebase backend handling 10,000+ user interactions',
-        '12 weekly stakeholder demos toward a production release',
-      ],
+        'A working app where you sign in, browse what’s available, and rent or lend a book, with the data syncing in real time.',
     },
   },
   {
@@ -76,22 +71,22 @@ export const projects: Project[] = [
     title: 'Car Rental App',
     category: 'mobile development',
     image: renter,
-    tagline: 'Two-sided car-rental marketplace with map-based search and real-time availability.',
+    tagline: 'Two connected apps for renting cars — one to list them, one to book nearby.',
     tech: ['React Native', 'Firebase', 'Maps', 'Authentication'],
     repoUrl: 'https://github.com/brayannbegu11/renterApp',
     featured: true,
     caseStudy: {
       problem:
-        'Car owners needed to list vehicles and renters needed to find and book nearby cars — a two-sided marketplace where trust and location matter.',
+        'Two sides of one problem: someone has a car sitting unused, and someone nearby needs one for a day. Both have to trust each other, and location is half the question.',
       role:
-        'Built two connected apps (one for owners, one for renters) with React Native, backed by Firebase for listings, accounts and rental transactions, plus location-based search and real-time updates.',
+        'I built it as two connected React Native apps — one for owners, one for renters — over a shared Firebase backend for accounts, listings and bookings. Renters search by location and watch availability change in real time.',
       decisions: [
-        'Dual-app architecture for the two user types sharing a single backend.',
-        'Integrated maps for location-based vehicle availability.',
-        'Firebase for secure, real-time data and authentication.',
+        'Two separate apps instead of one with a role switch, so each side only deals with what it needs.',
+        'Maps up front, since the first thing a renter asks is what’s nearby.',
+        'Firebase for authentication and real-time data.',
       ],
       outcome:
-        'Renters can browse and book nearby vehicles with live availability while owners manage listings and transactions securely.',
+        'Renters can find and book a nearby car with current availability, while owners handle their listings and bookings from their own app.',
     },
   },
   {
@@ -99,22 +94,22 @@ export const projects: Project[] = [
     title: 'Journal App',
     category: 'web development',
     image: journal,
-    tagline: 'Personal journaling web app with a calendar for date-based note tracking.',
+    tagline: 'Personal journaling web app organized around a calendar.',
     tech: ['React', 'Node.js', 'Firebase'],
     repoUrl: 'https://github.com/brayannbegu11/journal-app',
     featured: true,
     caseStudy: {
       problem:
-        'A simple, private space to write, edit and organize personal notes — with easy date-based navigation so entries are quick to find later.',
+        'I wanted a private place to write, and an easy way to find an old entry later. So the whole thing is built around a calendar instead of a long list.',
       role:
-        'Full-stack — React front end with a Node.js and Firebase backend for secure, per-user storage and authentication; built calendar-based organization and real-time updates.',
+        'Full-stack: a React front end with Node.js and Firebase behind it for login and per-user storage. The calendar is how you move between entries.',
       decisions: [
-        'Calendar-first navigation so entries are organized and retrieved by date.',
-        'Firebase auth + storage to keep each user’s notes private and synced.',
-        'Real-time updates for a seamless, no-save-button writing experience.',
+        'Calendar-first navigation, so you find entries by the day you wrote them.',
+        'Firebase for auth and storage, keeping each person’s notes private and synced.',
+        'Edits save as you type, so there’s no save button to think about.',
       ],
       outcome:
-        'Users write, edit and revisit entries by date, with their data securely stored per account.',
+        'You write, edit, and jump back to any day’s entry, all tied to your own account.',
     },
   },
   // --- More projects (links only) ---
